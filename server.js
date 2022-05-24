@@ -46,7 +46,7 @@ app.use(express.json());
 // Index
 app.get('/products', (req, res) => {
     Product.find({}, (err, allProducts) => {
-        res.render('Index', { product : allProducts });
+        res.render('Index', { product: allProducts });
         // console.log(req.body);
     })
 });
@@ -72,8 +72,10 @@ app.post('/products', (req, res) => {
 
 
 // Show
-app.get('/products/:indexOfbuyProduct', (req, res) => {
-    res.render('Show', { buy: Product[req.params.indexOfbuyProduct] });
+app.get('/products/:id', (req, res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        res.render('Show', { product: foundProduct });
+    })
 });
 
 

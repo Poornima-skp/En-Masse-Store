@@ -14,7 +14,7 @@ class DefaultLayout extends React.Component{
                             <h1>EN - MASSE STORE</h1>
                     </nav>
 
-                    <h1>{this.props.title}</h1>
+                    {/* <h2>{this.props.title}</h2> */}
                     {this.props.children}
 
                 </body>
