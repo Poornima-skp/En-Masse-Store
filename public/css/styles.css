@@ -34,6 +34,13 @@ nav {
     background-color: rgba(73, 219, 166, 0.852);
     border-radius: 10px;
 }
+
+.add{
+    font: 2em sans-serif;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
 .productPage{
     padding: 10px;
     display: flex;
@@ -46,8 +53,9 @@ nav {
     background-color: rgb(249, 241, 232);
     /* border: rgb(222, 66, 66) 2px solid; */
     border: rgb(228, 246, 36) 2px solid;
-    border-radius: 10px;
-    margin-bottom: 40px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-right: 10px;
     padding: 5px;
     max-height: 700px;
     max-width: 500px;
