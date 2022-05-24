@@ -4,8 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const method = require('method-override');
 
-const sellProduct = require('./models/SellProduct');
-const buyProduct = require('./models/buyProduct');
+const Product = require('./models/Product');
 
 
 
@@ -18,14 +17,24 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 // ************** Connection to Mongoose *****************
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
 
+mongoose.connection.once('open', () => console.log('Connected to Mongo'));
 
 
 // ************** Middleware ****************
+app.use(method('_method'));
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 
 // Need Express Middleware to parse JSON
+app.use(express.json());
+
 
 
 
@@ -35,15 +44,17 @@ app.engine('jsx', require('express-react-views').createEngine());
 
 
 // Index
-app.get('/products', (req,res) => {
-    res.render('Index', {buyProduct: buyProduct});
+app.get('/products', (req, res) => {
+    Product.find({}, (err, allProducts) => {
+        res.render('Index', { product : allProducts });
+        // console.log(req.body);
+    })
 });
 
-app.get('/products/:indexOfbuyProduct', (req,res) => {
-    res.render('Show', {buy: buyProduct[req.params.indexOfbuyProduct]} );
-
+// New
+app.get('/products/new', (req, res) => {
+    res.render('New');
 })
-
 
 // Delete
 
@@ -52,10 +63,18 @@ app.get('/products/:indexOfbuyProduct', (req,res) => {
 
 
 // Create
+app.post('/products', (req, res) => {
+    Product.create(req.body, (err, createdFruit) => {
+        res.redirect('/products')
+    })
+})
+
 
 
 // Show
-
+app.get('/products/:indexOfbuyProduct', (req, res) => {
+    res.render('Show', { buy: Product[req.params.indexOfbuyProduct] });
+});
 
 
 // Tell the app to listen on port 3000

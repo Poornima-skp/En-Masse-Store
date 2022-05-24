@@ -1,24 +1,39 @@
 const React = require('react');
-const buyProduct = require('../models/buyProduct');
+
 const DefaultLayout = require('./layout/DefaultLayout');
 
 class Index extends React.Component{
     render() {
-        const { buyProduct } = this.props;
+        console.log(this.props);
+        const Product  = this.props.product;
+        // const{ xyz } = this.props;
+
+        // console.log(xyz);
         return(
            <DefaultLayout title = "Kitchen Products">
                 <div>
 
                     <ul>
-                        {buyProduct.map((product, i) => {
+                        {/* {Product.map((product, i) => {
                             return (
                                 <div>
                                     <h1><a href={`/products/${i}`}>{product.name}</a></h1><br />
                                     <a href={`/products/${i}`}><img src={product.image} alt="" /></a><br />
                                     {'Price: '}{product.price} <br />
                                     {'Quantity: '}{product.quantity} <br />
-                                    {'Product Availability: '}{product.canBuy ? 'In Stock' : 'Out Of Stock!'}
+                                    {'Product Availability: '}{product.quantity > 0 ? 'In Stock' : 'Out Of Stock!'}
                                 </div>
+                            )
+                        })} */}
+                        {Product.map(product => {
+                            return(
+                                <li key ={product._id}>
+                                    <h1><a href={`/products/${product._id}`}>{product.name}</a></h1><br />
+                                    <a href={`/products/${product._id}`}><img src={product.image} alt="" /></a><br />
+                                    {'Price: $'}{product.price} <br />
+                                    {'Quantity: '}{product.quantity} <br />
+                                    {'Product Availability: '}{product.quantity > 0 ? 'In Stock' : 'Out Of Stock!'}
+                                </li>
                             )
                         })}
                     </ul>

@@ -1,0 +1,30 @@
+body{
+    background-color: blanchedalmond;
+}
+
+h1 {
+    font: 5em 'Display';
+    color: rgba(100, 60, 20, 1);
+}
+
+h1::before {
+    content: attr(text);
+    font-family: 'Two';
+    color: rgba(150, 150, 100, .5);
+}
+
+h1::after {
+    content: attr(text);
+    font-family: 'Three';
+    color: rgba(180, 150, 50, .5);
+}
+
+nav {
+    text-align: center;
+    position: relative;
+    top: 10px;
+    left: 5px;
+    background-color: rgba(200, 150, 150, 0.2);
+    border-radius: 10px;
+    max-width: 1190px;
+}

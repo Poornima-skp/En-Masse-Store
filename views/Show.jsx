@@ -3,7 +3,7 @@ const DefaultLayout = require('./layout/DefaultLayout');
 
 class Show extends React.Component{
     render() {
-        const buyProduct = this.props.buyProduct
+        const Product = this.props.Product
         return(
             <DefaultLayout title="Show">
                 <div>
