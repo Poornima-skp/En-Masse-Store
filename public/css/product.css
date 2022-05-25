@@ -1,0 +1,36 @@
+
+
+#availability {
+    font-size: 40px;
+    color: red;
+}
+
+.product {
+    background-color: rgb(247, 240, 230);
+    border: rgb(228, 246, 36) 2px solid;
+    border-radius: 10px;
+    /* box-shadow: 10px 5px 5px rgb(241, 182, 182); */
+    box-shadow: 10px 5px 5px rgb(154, 147, 147);
+    margin-bottom: 40px;
+    margin-right: 20px;
+    padding: 5px;
+    max-height: 450px;
+    max-width: 350px;
+}
+
+.productDetails {
+    /* color: rgb(90, 24, 24); */
+    color: rgb(0, 41, 244);
+}
+
+img {
+    width: 300px;
+    height: 250px;
+}
+
+#productName {
+    margin-left: 12px;
+    /* color: #760c0c; */
+    color: #b73490;
+    font: 2.5em 'Display';
+}

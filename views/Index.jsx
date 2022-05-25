@@ -8,9 +8,22 @@ class Index extends React.Component{
         return(
             
            <DefaultLayout title = "Kitchen Products">
-                <div className='add'>
+                {/* <div className='addNewProduct'>
                     <a href="/products/new">ADD New Product</a>
-                </div>
+                </div> */}
+                <nav>
+                    <div className="links">
+
+                        <div className="start">
+                            <a href="/products">Home</a>
+                        </div>
+                        <div className="end">
+                            <a href="cart">Cart</a>
+                        </div>
+
+                    </div>
+                </nav>
+                
                 <div class="productPage"> 
                      
                         {Product.map(product => {

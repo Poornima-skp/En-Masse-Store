@@ -1,0 +1,25 @@
+nav {
+    text-align: center;
+    /* background-color: rgba(200, 150, 150, 0.2); */
+    background-color: rgba(73, 219, 166, 0.852);
+    /* border-radius: 10px; */
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.end a {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(54, 53, 53);
+    font-size: 2rem;
+}
+
+.start a {
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(54, 53, 53);
+    font-size: 2rem;
+}

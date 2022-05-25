@@ -1,0 +1,33 @@
+.createPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 390px;
+    max-height: 350px;
+    border: 2px rgb(248, 121, 121) solid;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 20px;
+    color: rgb(173, 36, 107);
+    font-size: larger;
+    font-style: italic;
+}
+
+input {
+    padding: 2px;
+    border: 1.5px rgba(11, 150, 147, 0.932) solid;
+    border-radius: 5px;
+}
+
+#submit {
+    font-size: large;
+    color: rgb(196, 18, 18);
+    padding: 5px;
+    font-style: oblique;
+}

@@ -1,0 +1,45 @@
+.client {
+    display: flex;
+    flex-direction: row;
+    /* border: 1px black solid; */
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+}
+
+.buyer,
+.seller {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px red solid;
+    box-shadow: 10px 5px 5px rgb(154, 147, 147);
+    border-radius: 10px;    
+    height: 575px;
+    width: 500px;
+}
+
+#landingPageImage {
+    height: 500px;
+    width: 500px;
+    padding: 15px;
+}
+
+#clientAction{
+    box-shadow:10px 5px 5px rgb(154, 147, 147) ;
+    border: 2px rgb(109, 13, 13) solid;
+    border-radius: 20px;
+    padding: 7px;
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+    width: 200px;
+}
+
+#buttonText {
+    font-size: x-large;
+    color: rgb(207, 29, 85);
+    padding: 5px;
+    text-decoration: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
