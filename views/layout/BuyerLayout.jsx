@@ -1,6 +1,6 @@
 const React = require('react');
 
-class DefaultLayout extends React.Component {
+class BuyerLayout extends React.Component {
     render() {
 
         return (
@@ -16,7 +16,7 @@ class DefaultLayout extends React.Component {
                 <body>
                     <nav>
                         <h1>EN - MASSE STORE</h1>
-                        {/* <div className="links">
+                        <div className="links">
 
                             <div className="start">
                                 <a href="/products">Home</a>
@@ -25,10 +25,10 @@ class DefaultLayout extends React.Component {
                                 <a href="cart">Cart</a>
                             </div>
 
-                        </div> */}
+                        </div>
                     </nav>
 
-                    {/* <h2>{this.props.title}</h2> */}
+                    <h2 id="title">{this.props.title}</h2>
                     {this.props.children}
 
                 </body>
@@ -38,4 +38,4 @@ class DefaultLayout extends React.Component {
     }
 }
 
-module.exports = DefaultLayout;
+module.exports = BuyerLayout;

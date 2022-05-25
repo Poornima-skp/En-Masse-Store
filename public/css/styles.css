@@ -19,6 +19,11 @@ h2{
     color: rgb(240, 100, 35);
 }
 
+#title{
+    padding: 20px;
+    text-decoration: underline;
+}
+
 h3{
     font-size:x-large;
     color: rgb(196, 28, 95);

@@ -55,6 +55,10 @@ app.get('/products', (req, res) => {
     })
 });
 
+app.get('/products/buy', (req,res) => {
+    res.render('Buy')
+})
+
 
 
 // New
@@ -75,11 +79,7 @@ app.post('/products', (req, res) => {
     })
 });
 
-app.post('/products/:id', (req,res) => {
-    res.redirect(
 
-    )
-})
 
 
 

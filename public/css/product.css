@@ -30,7 +30,31 @@ img {
 
 #productName {
     margin-left: 12px;
+    padding-bottom: 15px;
     /* color: #760c0c; */
     color: #b73490;
     font: 2.5em 'Display';
+    text-decoration: none;
 }
+
+#addItems{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#buyItems, #addItemsToCart{
+    border: 1px rgb(8, 124, 124) solid;
+    border-radius: 5px;
+    padding: 2px;
+    margin-top: 15px;
+    height: 25px;
+    width: 110px;
+    font-size: large;
+    background-color: #65d6c3;
+}
+
+#buyText{
+    text-decoration: none;
+    color: black;
+}
+

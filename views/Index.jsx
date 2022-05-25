@@ -1,28 +1,17 @@
 const React = require('react');
 
-const DefaultLayout = require('./layout/DefaultLayout');
+const BuyerLayout = require('./layout/BuyerLayout');
 
 class Index extends React.Component{
     render() {
         const Product  = this.props.product;
         return(
             
-           <DefaultLayout title = "Kitchen Products">
+           <BuyerLayout title = "Kitchen Products">
                 {/* <div className='addNewProduct'>
                     <a href="/products/new">ADD New Product</a>
                 </div> */}
-                <nav>
-                    <div className="links">
-
-                        <div className="start">
-                            <a href="/products">Home</a>
-                        </div>
-                        <div className="end">
-                            <a href="cart">Cart</a>
-                        </div>
-
-                    </div>
-                </nav>
+                
                 
                 <div class="productPage"> 
                      
@@ -40,11 +29,11 @@ class Index extends React.Component{
                                             {'Quantity: '}{product.quantity} 
                                         <div id='availability'>
                                             {product.quantity > 0 
-                                            ? <form action={`/products/${product._id}/buy`} method='POST' >
-                                                <button>
-                                                    <a href={`/products/buy`}>BUY</a>
+                                            ? <form action={`/products/${product._id}/buy`} method='POST' id ="addItems" >
+                                                    <button id="buyItems">
+                                                    <a href={`/products/buy`} id="buyText" >BUY</a>
                                                 </button>
-                                                <input type="submit" name='' id='add' value="Add to Cart" />
+                                                <input type="submit" name='' id='addItemsToCart' value="Add to Cart" />
 
                                             </form> 
                                             : 'Out Of Stock!'
@@ -62,7 +51,7 @@ class Index extends React.Component{
                             )
                         })} 
                 </div>
-           </DefaultLayout>
+           </BuyerLayout>
         )
     }
 }
