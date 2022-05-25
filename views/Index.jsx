@@ -24,8 +24,21 @@ class Index extends React.Component{
                                         <a href={`/products/${product._id}`}><img src={product.image} alt="" /></a><br />
                                         <div className="productDetails">
                                             {'Price: $'}{product.price} <br />
-                                            {'Quantity: '}{product.quantity} <br />
-                                            <h4>{product.quantity > 0 ? 'In Stock' : 'Out Of Stock!'}</h4>
+                                            {'Quantity: '}{product.quantity} 
+                                        <div id='availability'>
+                                            {product.quantity > 0 
+                                            ? <form action={`/products/${product._id}/buy`} method='POST' >
+                                                <button>
+                                                    <a href={`/products/buy`}>BUY</a>
+                                                </button>
+                                                <input type="submit" name='' id='add' value="Add to Cart" />
+
+                                            </form> 
+                                            : 'Out Of Stock!'
+                                            }
+                                            
+                                            
+                                        </div>
                                         </div>
                                         <form action="/products" method='POST'>
 

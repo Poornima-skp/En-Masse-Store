@@ -1,17 +1,31 @@
 const React = require('react');
 
-class DefaultLayout extends React.Component{
+class DefaultLayout extends React.Component {
     render() {
 
-        return(
+        return (
             <html lang='en'>
                 <head>
                     <title>{this.props.title}</title>
                     <link rel="stylesheet" href="/css/styles.css" />
+                    <link rel="stylesheet" href="/css/nav.css" />
+                    <link rel="stylesheet" href="/css/landingPage.css" />
+
+
                 </head>
                 <body>
-                    <nav>  
-                            <h1>EN - MASSE STORE</h1>
+                    <nav>
+                        <h1>EN - MASSE STORE</h1>
+                        <div className="links">
+
+                            <div className="start">
+                                <a href="/products">Home</a>
+                            </div>
+                            <div className="end">
+                                <a href="cart">Cart</a>
+                            </div>
+
+                        </div>
                     </nav>
 
                     {/* <h2>{this.props.title}</h2> */}

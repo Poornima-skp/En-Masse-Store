@@ -44,6 +44,10 @@ app.use(express.json());
 
 
 // Index
+app.get('/', (req,res) =>{
+    res.render('LandingPage')
+})
+
 app.get('/products', (req, res) => {
     Product.find({}, (err, allProducts) => {
         res.render('Index', { product: allProducts });
@@ -67,6 +71,12 @@ app.post('/products', (req, res) => {
     Product.create(req.body, (err, createdFruit) => {
         res.redirect('/products')
     })
+});
+
+app.post('/products/:id', (req,res) => {
+    res.redirect(
+
+    )
 })
 
 
@@ -77,6 +87,8 @@ app.get('/products/:id', (req, res) => {
         res.render('Show', { product: foundProduct });
     })
 });
+
+
 
 
 // Tell the app to listen on port 3000

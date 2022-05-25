@@ -10,8 +10,8 @@ body{
 
 h1 {
     font: 4em 'Display';
-    /* color: rgba(100, 60, 20, 1); */
-    color: rgb(16, 151, 209);
+    color: rgba(100, 60, 20, 1);
+    /* color: rgb(16, 151, 209); */
 }
 
 h2{
@@ -24,8 +24,8 @@ h3{
     color: rgb(196, 28, 95);
 }
 
-h4{
-    font-size: xx-large;
+#availability{
+    font-size: 40px;
     color: red;
 }
 nav {
@@ -33,6 +33,25 @@ nav {
     /* background-color: rgba(200, 150, 150, 0.2); */
     background-color: rgba(73, 219, 166, 0.852);
     border-radius: 10px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.end a{
+    text-decoration: none;
+    padding: 10px;
+    color:white;
+    font-size: 2rem;
+}
+
+.start a{
+        text-decoration: none;
+        padding: 10px;
+        color: white;
+        font-size: 2rem;
 }
 
 .add{
@@ -45,20 +64,21 @@ nav {
     padding: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:space-evenly;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 .product{
-    /* background-color: rgb(247, 240, 230); */
-    background-color: rgb(249, 241, 232);
-    /* border: rgb(222, 66, 66) 2px solid; */
+    background-color: rgb(247, 240, 230);
     border: rgb(228, 246, 36) 2px solid;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-right: 10px;
+    border-radius: 10px;
+    /* box-shadow: 10px 5px 5px rgb(241, 182, 182); */
+    box-shadow: 10px 5px 5px rgb(154, 147, 147);
+    margin-bottom: 40px;
+    margin-right: 20px;
     padding: 5px;
-    max-height: 700px;
-    max-width: 500px;
+    max-height: 450px;
+    max-width: 350px;
 }
 
 .productDetails{
@@ -67,8 +87,8 @@ nav {
 }
 
 img{
-    width: 350px;
-    height: 300px;
+    width: 300px;
+    height: 250px;
 }
 
 #productName{
