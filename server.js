@@ -51,10 +51,15 @@ app.get('/', (req,res) =>{
 
 app.get('/products', (req, res) => {
     Product.find({}, (err, allProducts) => {
-        res.render('Index', { product: allProducts });
-        // console.log(req.body);
+        res.render('BuyerIndex', { product: allProducts });
     })
 });
+
+app.get('/products/seller', (req,res) => {
+    Product.find({}, (err, allProducts) => {
+        res.render('SellerIndex', { product: allProducts });
+    })
+})
 
 app.get('/products/:id/buy', (req, res) => {
     Product.findById(req.params.id, (err, selectProduct) => {
@@ -84,7 +89,16 @@ app.post('/products', (req, res) => {
 });
 
 
-
+// Edit
+app.get('/products/seller/:id/edit', (req,res) => {
+    Product.findById(req.params.id, (err, foundProduct) => {
+        if(!err){
+            res.render('Edit')
+        } else {
+            res.status(400).json(err)
+        }
+    })
+})
 
 
 // Show

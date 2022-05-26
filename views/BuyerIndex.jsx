@@ -1,43 +1,38 @@
 const React = require('react');
-
 const BuyerLayout = require('./layout/BuyerLayout');
 
-class Index extends React.Component {
+class BuyerIndex extends React.Component {
     render() {
         const Product = this.props.product;
         return (
 
             <BuyerLayout title="Kitchen Products">
-                <div className='addNewProduct'>
-                    <a href="/products/new">ADD New Product</a>
-                </div>
-
-
+            
                 <div class="productPage">
 
                     {Product.map(product => {
                         return (
-
-
-
                             <div key={product._id} class="product">
 
                                 <div className="productName">
                                     <a id='productName' href={`/products/${product._id}`}>{product.name}</a><br />
                                 </div>
+
                                 <div className="productImage">
                                     <a href={`/products/${product._id}`}><img src={product.image} alt="" id='img' /></a>
-
                                 </div>
 
                                 <div className="productDetails">
                                     <div className="productInfo">
+
                                         <div className="price">
                                             {'Price: $'}{product.price}
                                         </div>
+
                                         <div className="quantity">
                                             {'Quantity: '}{product.quantity}
                                         </div>
+
                                         <div className="rating">
                                             <span>
                                                 <i className={product.rating >= 1 
@@ -76,6 +71,7 @@ class Index extends React.Component {
                                             </span>
                                         </div>
                                     </div>
+
                                     <div id='availability'>
                                         {product.quantity > 0
                                             ? ''
@@ -102,8 +98,6 @@ class Index extends React.Component {
 
                                 </form>
                             </div>
-
-
                         )
                     })}
                 </div>
@@ -112,4 +106,4 @@ class Index extends React.Component {
     }
 }
 
-module.exports = Index;
+module.exports = BuyerIndex;

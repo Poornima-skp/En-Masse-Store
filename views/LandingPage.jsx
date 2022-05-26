@@ -16,7 +16,7 @@ class Landing extends React.Component {
 
                     <div className="seller">
                         <button type="submit" value="sell" name="action" id='clientAction'>
-                            <a href={'/sell'} id='buttonText'>SELLING</a>
+                            <a href={'/products/seller'} id='buttonText'>SELLING</a>
                         </button>
                         <img src="https://images.unsplash.com/photo-1594969155368-f19485a9d88c?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VsbHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500" alt="" id='landingPageImage'/>
                         
