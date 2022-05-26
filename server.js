@@ -55,9 +55,9 @@ app.get('/products', (req, res) => {
     })
 });
 
-app.get('/products/seller', (req,res) => {
+app.get('/products/vendor', (req,res) => {
     Product.find({}, (err, allProducts) => {
-        res.render('SellerIndex', { product: allProducts });
+        res.render('vendorIndex', { product: allProducts });
     })
 })
 
@@ -76,9 +76,28 @@ app.get('/products/new', (req, res) => {
 })
 
 // Delete
+app.delete('products/vendor/:id', (req,res) => {
+    Product.findByIdAndDelete(req.params.id, (err) => {
+        if(!err) {
+            res.status(200).redirect('/products/vendor')
+        } else {
+            res.status(400).json(err)
+        }
+    })
+})
 
 
 // Update
+app.put('/products/vendor/:id', (req,res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateProduct) => {
+        if(!err){
+            res.status(200).redirect('/products/vendor');
+        } else {
+            res.status(400).json(err);
+        }
+    })
+})
+
 
 
 // Create
@@ -90,10 +109,10 @@ app.post('/products', (req, res) => {
 
 
 // Edit
-app.get('/products/seller/:id/edit', (req,res) => {
+app.get('/products/vendor/:id/edit', (req,res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
         if(!err){
-            res.render('Edit')
+            res.render('Edit', {product: foundProduct})
         } else {
             res.status(400).json(err)
         }

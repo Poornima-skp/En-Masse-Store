@@ -8,7 +8,7 @@
 }
 
 .buyer,
-.seller {
+.vendor {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
