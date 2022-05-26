@@ -1,6 +1,9 @@
 {
   "name": "en-masse-store",
   "version": "1.0.0",
+  "engines": {
+    "node": "v16.14.2"
+  },
   "description": "",
   "main": "server.js",
   "scripts": {

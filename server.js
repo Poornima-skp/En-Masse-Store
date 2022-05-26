@@ -48,6 +48,7 @@ app.get('/', (req,res) =>{
     res.render('LandingPage')
 })
 
+
 app.get('/products', (req, res) => {
     Product.find({}, (err, allProducts) => {
         res.render('Index', { product: allProducts });
@@ -55,8 +56,11 @@ app.get('/products', (req, res) => {
     })
 });
 
-app.get('/products/buy', (req,res) => {
-    res.render('Buy')
+app.get('/products/:id/buy', (req, res) => {
+    Product.findById(req.params.id, (err, selectProduct) => {
+        res.render('Buy', {product: selectProduct})
+    })
+    
 })
 
 
@@ -84,11 +88,16 @@ app.post('/products', (req, res) => {
 
 
 // Show
+
 app.get('/products/:id', (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
         res.render('Show', { product: foundProduct });
     })
 });
+
+
+
+
 
 
 
