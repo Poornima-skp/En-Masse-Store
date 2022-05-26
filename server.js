@@ -76,8 +76,8 @@ app.get('/products/new', (req, res) => {
 })
 
 // Delete
-app.delete('products/vendor/:id', (req,res) => {
-    Product.findByIdAndDelete(req.params.id, (err) => {
+app.delete('/products/vendor/:_id', (req,res) => {
+    Product.findByIdAndDelete(req.params._id, (err, deleteProduct) => {
         if(!err) {
             res.status(200).redirect('/products/vendor')
         } else {
