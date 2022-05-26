@@ -9,7 +9,7 @@ class Edit extends React.Component {
 
             <DefaultLayout title="Create New Product">
                 <div className="createPage">
-                    <h2>Edit {product.name}</h2>
+                    <h2 id="editProductName">Edit {product.name}</h2>
                     <form action={`/products/vendor/${product._id}?_method=PUT`} method='POST' className='form'>
                         <label htmlFor="name">Name: </label>
                         <input type="text" id="name" name="name" defaultValue={product.name} /> <br />
@@ -23,8 +23,14 @@ class Edit extends React.Component {
                         <label htmlFor="quantity">Quantity: </label>
                         <input type="number" id="quantity" name="quantity" defaultValue={product.quantity} /> <br />
 
+                        <label htmlFor="productDescription">Description: </label>
+                        <input type="text-Box" id="productDescription" name="productDescription" defaultValue={product.productDescription}/> <br />
+
+                        <label htmlFor="sellerName">Seller Name: </label>
+                        <input type="text" id="sellerName" name="sellerName" defaultValue={product.sellerName}/> <br />
+
                         <label htmlFor="rating">Rating: </label>
-                        <input type="number" step="0.01" min="0" max="10" id="rating" name="rating" defaultValue={product.rating} /> <br />
+                        <input type="number" step="0.1" min="0" max="10" id="rating" name="rating" defaultValue={product.rating} /> <br />
 
                         <label htmlFor="reviews">Reviews: </label>
                         <input type="number" id="reviews" name="reviews" defaultValue={product.reviews}/> <br />

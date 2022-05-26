@@ -8,15 +8,20 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    max-height: 550px;
+    width: 600px;
+    max-height: 950px;
     border: 2px rgb(248, 121, 121) solid;
     border-radius: 15px;
-    margin: 10px;
+    margin: 30px;
     padding: 20px;
     color: rgb(173, 36, 107);
     font-size: larger;
     font-style: italic;
+}
+
+#editProductName{
+    margin-top: 50px;
+
 }
 
 input {

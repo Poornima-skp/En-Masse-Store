@@ -22,8 +22,14 @@ class New extends React.Component {
                         <label htmlFor="quantity">Quantity: </label>
                         <input type="number" id="quantity" name="quantity" /> <br />
 
+                        <label htmlFor="productDescription">Description: </label>
+                        <input type="text-box" id="productDescription" name="productDescription" /> <br />
+
+                        <label htmlFor="sellerName">Seller Name: </label>
+                        <input type="text" id="sellerName" name="sellerName" /> <br />
+
                         <label htmlFor="rating">Rating: </label>
-                        <input type="number" min="0" max="10" id="rating" name="rating" /> <br />
+                        <input type="number" step="0.1" min="0" max="5" id="rating" name="rating" /> <br />
 
                         <label htmlFor="reviews">Reviews: </label>
                         <input type="number" id="reviews" name="reviews" /> <br />

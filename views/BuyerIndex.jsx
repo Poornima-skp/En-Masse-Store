@@ -69,6 +69,7 @@ class BuyerIndex extends React.Component {
                                                     ? 'fa fa-star-half-o' 
                                                     : 'fa fa-star-o'}></i>
                                             </span>
+                                            <span> {product.reviews} reviews </span>
                                         </div>
                                     </div>
 
@@ -78,21 +79,6 @@ class BuyerIndex extends React.Component {
                                             : <div className='outOfStock'>Out Of Stock!</div>
                                         }
                                     </div>
-
-
-                                    {/* <div id='availability'>
-                                        {product.quantity > 0
-                                            ? <form action={`/products/${product._id}/buy`} method='POST' id="addItems" >
-                                                <button id="buyItems">
-                                                    <a href={`/products/${product._id}/buy`} id="buyText" >BUY</a>
-                                                </button>
-                                                <input type="submit" name='' id='addItemsToCart' value="Add to Cart" />
-
-                                            </form>
-                                            : 'Out Of Stock!'
-                                        }
-                                    </div> */}
-
                                 </div>
                                 <form action="/products" method='POST'>
 

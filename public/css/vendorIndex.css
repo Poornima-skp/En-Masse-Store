@@ -1,0 +1,10 @@
+.delEdit{
+    padding-top: 15px;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.rating span:last-child{
+    padding-left: 3px;
+    color:black
+}
