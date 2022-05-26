@@ -88,6 +88,11 @@ app.delete('/products/vendor/:_id', (req,res) => {
 
 
 // Update
+app.put('/products/:id/cart', (req,res) => {
+    // Product.findById(req.params.id, )
+    res.render('Cart')
+})
+
 app.put('/products/vendor/:id', (req,res) => {
     Product.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateProduct) => {
         if(!err){
@@ -97,6 +102,8 @@ app.put('/products/vendor/:id', (req,res) => {
         }
     })
 })
+
+
 
 
 

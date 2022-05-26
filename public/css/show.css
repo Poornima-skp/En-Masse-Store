@@ -1,0 +1,81 @@
+.showPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5px;
+    align-content: center;
+}
+
+#back{
+    text-decoration: none;
+    margin: 10px;
+    padding: 20px;
+    font-size: x-large;
+}
+
+
+/* Common css */
+.grid {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    justify-content: flex-start;
+}
+
+/* Column 1 CSS */
+#showPageImage{
+   height: 500px;
+   width: 450px;
+}
+
+/* Column 2 CSS */
+li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.showPageName, .showPagePrice{
+    color: rgb(188, 55, 137)
+}
+
+.inStock{
+    color: green
+}
+
+.imageIcon{
+    height:75px;
+    width:75px;
+}
+
+/* Column 3 CSS */
+.customerRequest{
+    border: .1px black solid;
+    max-height: 200px;
+    max-width: 310px;
+    margin: 30px;
+}
+
+#cartDisplay{
+    display: flex;
+    justify-content: space-between;
+}
+
+.addToCart{
+    width: 100%;
+    margin-top: 20px;
+    padding: 2px;
+    border-radius: 0.5rem;
+    border: 0.1rem #7e7d7d solid;
+    font-size: large;
+    font-family: Helvetica, Arial, Sans-serif;
+    background-color: #f0c040;
+    cursor: pointer;
+}
+
+
+
+.addToCart:hover{
+    border: 0.1rem #0e0e0e solid;;
+}
+
