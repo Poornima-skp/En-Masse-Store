@@ -1,15 +1,17 @@
 require('dotenv').config();
+
 // ************* Require Modules ****************
+
 const express = require('express');
 const mongoose = require('mongoose');
 const method = require('method-override');
-
+const session = require('express-session')
 const Product = require('./models/Product');
-
-
+const Cart = require('./models/Cart');
 
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT || 3000;
 
 
 // ************** Engine Setup ****************
@@ -31,20 +33,15 @@ app.use(method('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-
-// Need Express Middleware to parse JSON
 app.use(express.json());
 
 
 
-
 // ************** Routes ****************
-// I.N.D.U.C.E.S --> this the order of writing the routes
+// I.N.D.U.C.E.S --> order of writing the routes
 
-
-
-// Index
-app.get('/', (req,res) =>{
+// ************** INDEX Route
+app.get('/', (req, res) => {
     res.render('LandingPage')
 })
 
@@ -55,30 +52,29 @@ app.get('/products', (req, res) => {
     })
 });
 
-app.get('/products/vendor', (req,res) => {
+// app.get('products/:id/cart', (req,res) => {
+//     Cart.find({}, (err,allProducts) => {
+//         res.render('CartPage', {product: allProducts})
+//     })
+// })
+
+app.get('/products/vendor', (req, res) => {
     Product.find({}, (err, allProducts) => {
-        res.render('vendorIndex', { product: allProducts });
+        res.render('VendorIndex', { product: allProducts });
     })
 })
 
-app.get('/products/:id/buy', (req, res) => {
-    Product.findById(req.params.id, (err, selectProduct) => {
-        res.render('Buy', {product: selectProduct})
-    })
-    
-})
 
-
-
-// New
+// ************** NEW Route
 app.get('/products/new', (req, res) => {
     res.render('New');
 })
 
-// Delete
-app.delete('/products/vendor/:_id', (req,res) => {
+
+// ************** DELETE Route
+app.delete('/products/:_id', (req, res) => {
     Product.findByIdAndDelete(req.params._id, (err, deleteProduct) => {
-        if(!err) {
+        if (!err) {
             res.status(200).redirect('/products/vendor')
         } else {
             res.status(400).json(err)
@@ -87,16 +83,12 @@ app.delete('/products/vendor/:_id', (req,res) => {
 })
 
 
-// Update
-app.put('/products/:id/cart', (req,res) => {
-    // Product.findById(req.params.id, )
-    res.render('Cart')
-})
-
-app.put('/products/vendor/:id', (req,res) => {
-    Product.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updateProduct) => {
-        if(!err){
-            res.status(200).redirect('/products/vendor');
+// ************** UPDATERoute
+app.put('/products/:id', (req,res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedProduct) => {
+        if(!err) {
+            // res.send(updatedProduct);
+            res.status(200).redirect('/products');
         } else {
             res.status(400).json(err);
         }
@@ -105,9 +97,7 @@ app.put('/products/vendor/:id', (req,res) => {
 
 
 
-
-
-// Create
+// ************** CREATE Route
 app.post('/products', (req, res) => {
     Product.create(req.body, (err, createdFruit) => {
         res.redirect('/products')
@@ -115,11 +105,11 @@ app.post('/products', (req, res) => {
 });
 
 
-// Edit
-app.get('/products/vendor/:id/edit', (req,res) => {
+// ************** EDIT Route
+app.get('/products/vendor/:id/edit', (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
-        if(!err){
-            res.render('Edit', {product: foundProduct})
+        if (!err) {
+            res.render('Edit', { product: foundProduct })
         } else {
             res.status(400).json(err)
         }
@@ -127,13 +117,23 @@ app.get('/products/vendor/:id/edit', (req,res) => {
 })
 
 
-// Show
+// ************** SHOW Route
 
 app.get('/products/:id', (req, res) => {
     Product.findById(req.params.id, (err, foundProduct) => {
         res.render('Show', { product: foundProduct });
     })
 });
+
+app.get('/products/:id/cart', (req, res) => {
+   Product.findById(req.params.id, function(err, product)  {
+        if(err){
+            res.status(400).json(err);
+        } else {
+            res.render('CartPage', {product: product, cart: Cart});
+        }
+    })
+})
 
 
 

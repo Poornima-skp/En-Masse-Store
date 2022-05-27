@@ -10,7 +10,7 @@ class Edit extends React.Component {
             <DefaultLayout title="Create New Product">
                 <div className="createPage">
                     <h2 id="editProductName">Edit {product.name}</h2>
-                    <form action={`/products/vendor/${product._id}?_method=PUT`} method='POST' className='form'>
+                    <form action={`/products/${product._id}?_method=PUT`} method='POST' className='form'>
                         <label htmlFor="name">Name: </label>
                         <input type="text" id="name" name="name" defaultValue={product.name} /> <br />
 

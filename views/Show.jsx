@@ -1,9 +1,13 @@
 const React = require('react');
 const BuyerLayout = require('./layout/BuyerLayout');
 
+
+
+
 class Show extends React.Component {
     render() {
         const Product = this.props.product
+           
         return (
 
             <BuyerLayout title={`${Product.name}`}>
@@ -26,24 +30,22 @@ class Show extends React.Component {
                         <li><h4>Description:</h4>
                             {Product.productDescription}</li>
 
-
-
                         <li><h4>Images:</h4>
                             <div>
                                 <img src={Product.image} alt="" className="imageIcon" />
                             </div>
                         </li>
-                        
+
                     </div>
 
                     <div className="customerRequest grid">
-                       
+
                         <li id='cartDisplay'><div><h4>Seller:</h4></div>
                             <div>{Product.sellerName}</div></li>
 
                         <li id='cartDisplay'><div><h4>Price:</h4></div>
                             <div>${Product.price}</div></li>
-                            
+
                         {Product.quantity > 0 && (
                             <>
                                 <li>
@@ -55,24 +57,25 @@ class Show extends React.Component {
                                                     [...Array(Product.quantity).keys()].map(x => (
                                                         <option key={x + 1} value={x + 1}>{x + 1}</option>
                                                     ))
+                                                    
                                                 }
                                             </select>
 
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <form action={`/products/${Product._id}/cart?_method=PUT`} method='POST'>
+                                {/* <li> */}
+                                    {/* <form action={`/products/${Product._id}/?_method=PUT`} method='POST'>
                                         <input type="submit" name='' id="submit" value="Add to Cart" className='addToCart' />
-                                    </form>
-                                </li>
-                                
+                                    </form> */}
+                                <a href={`/products/${Product._id}/cart`} className='addToCart' >Add to Cart</a>
+                                {/* </li> */}
+
                             </>
                         )}
                         <li><h4>{Product.quantity > 0
                             ? '' : <div className='outOfStock'>Out Of Stock!</div>}</h4></li>
 
-                        
                     </div>
 
 
@@ -85,3 +88,4 @@ class Show extends React.Component {
 }
 
 module.exports = Show;
+// module.exports = Show.Qty;
