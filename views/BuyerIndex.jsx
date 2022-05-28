@@ -80,9 +80,9 @@ class BuyerIndex extends React.Component {
                                         }
                                     </div>
                                 </div>
-                                <form action="/products" method='POST'>
+                                {/* <form action="/products" method='POST'>
 
-                                </form>
+                                </form> */}
                             </div>
                         )
                     })}

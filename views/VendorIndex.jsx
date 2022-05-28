@@ -17,11 +17,11 @@ class BuyerIndex extends React.Component {
                             <div key={product._id} class="product">
 
                                 <div className="productName">
-                                    <a id='productName' href={`/products/${product._id}`}>{product.name}</a><br />
+                                    <a id='productName' href={`/products/vendor/${product._id}/edit`}>{product.name}</a><br />
                                 </div>
 
                                 <div className="productImage">
-                                    <a href={`/products/${product._id}`}><img src={product.image} alt="" id='img' /></a>
+                                    <a href={`/products/vendor/${product._id}/edit`}><img src={product.image} alt="" id='img' /></a>
                                 </div>
 
                                 <div className="productDetails">

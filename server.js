@@ -52,11 +52,16 @@ app.get('/products', (req, res) => {
     })
 });
 
-// app.get('products/:id/cart', (req,res) => {
-//     Cart.find({}, (err,allProducts) => {
-//         res.render('CartPage', {product: allProducts})
-//     })
-// })
+app.get('/cart', (req, res) => {
+    Product.find({}, (err, allProducts) => {
+        Cart.find({}, (err, allCartItems) => {
+            res.render('CartPage', {
+                product: allProducts,
+                cart: allCartItems
+            })
+        })
+    })
+})
 
 app.get('/products/vendor', (req, res) => {
     Product.find({}, (err, allProducts) => {
@@ -84,9 +89,9 @@ app.delete('/products/:_id', (req, res) => {
 
 
 // ************** UPDATERoute
-app.put('/products/:id', (req,res) => {
-    Product.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedProduct) => {
-        if(!err) {
+app.put('/products/:id', (req, res) => {
+    Product.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedProduct) => {
+        if (!err) {
             // res.send(updatedProduct);
             res.status(200).redirect('/products');
         } else {
@@ -103,6 +108,8 @@ app.post('/products', (req, res) => {
         res.redirect('/products')
     })
 });
+
+app
 
 
 // ************** EDIT Route
@@ -126,11 +133,11 @@ app.get('/products/:id', (req, res) => {
 });
 
 app.get('/products/:id/cart', (req, res) => {
-   Product.findById(req.params.id, function(err, product)  {
-        if(err){
+    Product.findById(req.params.id, function (err, product) {
+        if (err) {
             res.status(400).json(err);
         } else {
-            res.render('CartPage', {product: product, cart: Cart});
+            res.render('CartPage', { product: product, cart: Cart });
         }
     })
 })
