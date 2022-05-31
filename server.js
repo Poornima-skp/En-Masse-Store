@@ -5,7 +5,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const method = require('method-override');
-const session = require('express-session')
+// const session = require('express-session')
 const Product = require('./models/Product');
 const Cart = require('./models/Cart');
 
@@ -99,7 +99,7 @@ app.put('/products/:id', (req, res) => {
     Product.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedProduct) => {
         if (!err) {
             // res.send(updatedProduct);
-            res.status(200).redirect('/products');
+            res.status(200).redirect('/products/vendor');
         } else {
             res.status(400).json(err);
         }
@@ -147,13 +147,6 @@ app.get('/products/:id/cart', (req, res) => {
         }
     })
 })
-
-
-
-
-
-
-
 
 // Tell the app to listen on port 3000
 app.listen(port, () => console.log('Listening in port', port));
