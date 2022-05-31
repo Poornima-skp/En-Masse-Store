@@ -9,7 +9,7 @@ class New extends React.Component {
             <DefaultLayout title="Create New Product">
                 <div className="createPage">
                     <h2>Create New Product</h2>
-                    <form action="/products" method='POST' className='form'>
+                    <form action="/products/vendor" method='POST' className='form'>
                         <label htmlFor="name">Name: </label>
                         <input type="text" id="name" name="name" /> <br />
 

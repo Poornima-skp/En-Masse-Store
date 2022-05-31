@@ -72,7 +72,7 @@ class BuyerIndex extends React.Component {
                                         </div>
                                     </div>
 
-                                    <form action={`/products/vendor/${product._id}?_method=DELETE`} method='POST'>
+                                    <form action={`/products/${product._id}?_method=DELETE`} method='POST'>
                                         <div className="delEdit">
                                             <input type="submit" value="DELETE" id='deleteButton'/>
                                             <button>

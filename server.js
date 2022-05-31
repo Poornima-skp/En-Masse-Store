@@ -110,9 +110,9 @@ app.put('/products/:id', (req, res) => {
 
 
 // ************** CREATE Route
-app.post('/products', (req, res) => {
+app.post('/products/vendor', (req, res) => {
     Product.create(req.body, (err, createdFruit) => {
-        res.redirect('/products')
+        res.redirect('/products/vendor')
     })
 });
 
