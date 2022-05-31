@@ -33,6 +33,7 @@ app.use(method('_method'));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
+app.use('/images', express.static('images'))
 
 app.use(express.json());
 

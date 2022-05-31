@@ -22,10 +22,10 @@ class BuyerLayout extends React.Component {
                         <div className="links">
 
                             <div className="start">
-                                <a href="/products">Home</a>
+                                <a id="link" href="/products">Home</a>
                             </div>
                             <div className="end">
-                                <a href="/cart">Cart</a>
+                                <a id="link" href="/cart">Cart</a>
                             </div>
 
                         </div>

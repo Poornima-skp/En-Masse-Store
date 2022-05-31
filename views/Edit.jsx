@@ -9,7 +9,12 @@ class Edit extends React.Component {
 
             <DefaultLayout title="Create New Product">
                 <div className="createPage">
+                    <a href="/products/vendor" id='back'>Back</a>
+                    <form action={`/products/vendor/${product._id}?_method=DELETE`} method='POST'>
+                        <input type="submit" value={`DELETE ${product.name}`} id='deleteButton' />
+                    </form>
                     <h2 id="editProductName">Edit {product.name}</h2>
+                   
                     <form action={`/products/${product._id}?_method=PUT`} method='POST' className='form'>
                         <label htmlFor="name">Name: </label>
                         <input type="text" id="name" name="name" defaultValue={product.name} /> <br />

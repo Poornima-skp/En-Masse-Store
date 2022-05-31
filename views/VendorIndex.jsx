@@ -8,7 +8,7 @@ class BuyerIndex extends React.Component {
 
             <DefaultLayout title="Kitchen Products">
                 <div className='addNewProduct'>
-                    <a href="/products/new">ADD New Product</a>
+                    <a id="addNewProduct" href="/products/new">ADD New Product</a>
                 </div>
 
                 <div class="productPage">
@@ -74,9 +74,9 @@ class BuyerIndex extends React.Component {
 
                                     <form action={`/products/vendor/${product._id}?_method=DELETE`} method='POST'>
                                         <div className="delEdit">
-                                            <input type="submit" value="DELETE" />
+                                            <input type="submit" value="DELETE" id='deleteButton'/>
                                             <button>
-                                                <a href={`/products/vendor/${product._id}/edit`}>{`Edit ${product.name}`}</a>
+                                                <a id="editButton" href={`/products/vendor/${product._id}/edit`}>{`Edit ${product.name}`}</a>
                                             </button>
                                         </div>
                                     </form>

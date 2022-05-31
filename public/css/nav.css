@@ -10,6 +10,11 @@ nav {
     justify-content: space-between;
 }
 
+#link:hover{
+    color: rgb(174, 51, 17);
+    font-size: 175%;
+}
+
 .end a {
     text-decoration: none;
     padding: 10px;

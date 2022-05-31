@@ -7,7 +7,7 @@ class Landing extends React.Component {
             <DefaultLayout title="Landing Page">
                 <div className="client">
                     <div className="buyer">
-                        <button type="submit" value="buy" name="action" id='clientAction'>
+                        <button type="submit" value="buy" name="action" id='clientAction' >
                             <a href={'/products'} id='buttonText'>Shopper</a>
                         </button>
                         <img src="https://images.unsplash.com/photo-1560858001-2a568c6ea1d7?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YnV5aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500" alt="" id='landingPageImage'/>
