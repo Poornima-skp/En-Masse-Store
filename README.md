@@ -1,6 +1,9 @@
-# En-Masse-Store
+# Title
 ***
+### En-Masse-Store
+
 ## General Info:
+***
 ### Project Status:
 In Development
 ### WireFrame:
@@ -9,8 +12,10 @@ In Development
 ![image](https://user-images.githubusercontent.com/102619825/171082612-e09eb9b1-df08-4601-8755-b011d86d3392.png)
 
 ## Description:
+***
 En-Masse-Store is a simple form of shopping website like e-bay where a user can buy or sell their products. A user entering in as a customer can view and buy the products. A user entering as a vendor can also view the products they are selling as well as add new producuts to their database or edit or delete an existing product. All these are styled with css to give the user a pleant shopping experience.
 ## Featutes/Highlights:
+***
 1. A sample e-commerce shopping site
 2. View in Shopper or a vendor View 
 3. Product dispays OUT-OF-Stock if the Quantity reaches 0
@@ -25,7 +30,8 @@ En-Masse-Store is a simple form of shopping website like e-bay where a user can 
 	* Detete a Product
 	* Edit a Product
 	
-## Technologies: 
+## Technologies:
+***
 * Node js
 * Mongoose
 * Express
@@ -33,10 +39,23 @@ En-Masse-Store is a simple form of shopping website like e-bay where a user can 
 * css
 
 ## Installation:
+***
 A little intro about the installation. 
 ```
 $ git clone https://github.com/Poornima-skp/En-Masse-Store
 $ cd En-Masse-Store
 $ npm install
 ```
+## Resourses Used:
+***
+* MDN Docs
+* W3 Schools
+* StackOverflow
+
+## Future Plans:
+***
+1. Display Add-To-Cart Page with edit and delete features
+2. Link the Buy page to Pay-Pal 
+3. Create a Sign-in Page to check user credentials
+4. Create pages and routes for Multiple Products
 
